@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://G:\GIT_LIB\BluetoothDemo-master\BluetoothDemo.iml" filepath="G:\GIT_LIB\BluetoothDemo-master\BluetoothDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/BluetoothDemo-master.iml" filepath="$PROJECT_DIR$/BluetoothDemo-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BlueToothTerminal.iml" filepath="$PROJECT_DIR$/BlueToothTerminal.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://G:\GIT_LIB\BluetoothDemo-master\app\app.iml" filepath="G:\GIT_LIB\BluetoothDemo-master\app\app.iml" />
     </modules>
   </component>
 </project>

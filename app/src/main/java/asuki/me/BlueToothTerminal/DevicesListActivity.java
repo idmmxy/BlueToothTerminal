@@ -1,4 +1,4 @@
-package cn.jingedawang.bluetoothdemo;
+package asuki.me.BlueToothTerminal;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;

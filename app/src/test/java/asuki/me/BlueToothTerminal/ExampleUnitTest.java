@@ -1,4 +1,4 @@
-package cn.jingedawang.bluetoothdemo;
+package asuki.me.BlueToothTerminal;
 
 import org.junit.Test;
 

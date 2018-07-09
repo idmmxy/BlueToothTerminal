@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.jingedawang.bluetoothdemo">
+  package="asuki.me.BlueToothTerminal">
+  <!-- [xmlns:android] is always be set to "http://schemas.android.com/apk/res/android".
+       [package] A full Java-language-style package name for the Android app.
+       [SEE - MORE] https://developer.android.com/guide/topics/manifest/manifest-element -->
 
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="cn.jingedawang.bluetoothdemo.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/DebugBLTTestTheme">
+    <!-- [android:allowBackup] default value is 'true', Set this attribute can avoid
+                               some data leakage problem.
+         [android:icon] Android's resources are saved in document 'res', and mipmap is
+                        used to save the launcher icon. postfix like -hdpi can provide
+                        backup resources for many other devices.
+         [android:label] A user-readable label for the application as a whole, and a
+                         default label for each of the application's components.
+                         We can see this value from 'res->values->strings.xml'.
+         [android:supportsRtl] Declares whether your application is willing to support
+                               right-to-left (RTL) layouts. This need targetSdkVersion
+                               is set to 17 or higher, various RTL APIs will be
+                               activated and used by the system so your app can
+                               display RTL layouts.
+         [android:theme] A reference to a style resource defining a default theme for
+                         all activities in the application. [SEE MORE :
+                         https://developer.android.com/guide/topics/ui/themes ]
+                         [NoActionBar : This Theme will let your app do not have An
+                                        ActionBar.] -->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name="cn.jingedawang.bluetoothdemo.DevicesListActivity">
-        </activity>
-    </application>
-
+    <!-- This application has two activities -->
+    <activity android:name="asuki.me.BlueToothTerminal.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity><!-- The main intent will launcher in this activity -->
+    <activity android:name="asuki.me.BlueToothTerminal.DevicesListActivity" />
+  </application>
 </manifest>
