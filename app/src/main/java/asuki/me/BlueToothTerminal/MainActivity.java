@@ -27,20 +27,6 @@ public class MainActivity extends Activity{
 
   /**
    * @brief:
-   * @param: None
-   * @retval: None
-   */
-  MainActivity() {
-    text_isConnected = findViewById(R.id.TXT_IS_CONNECTED);
-    edit_messageReceive = findViewById(R.id.EDT_RECEIVED_MESSAGE);
-    edit_messageTransmit = findViewById(R.id.EDT_SENT_MESSAGE);
-    edit_sendingMessageBuffer = findViewById(R.id.EDT_SEND_MESSAGE);
-    button_send = findViewById(R.id.BTN_SEND);
-    button_pairedDevices = findViewById(R.id.BTN_PAIRED_DEVICES);
-  }
-
-  /**
-   * @brief:
    * @param:
    * @retval: None
    */
@@ -48,6 +34,13 @@ public class MainActivity extends Activity{
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    text_isConnected = findViewById(R.id.TXT_IS_CONNECTED);
+    edit_messageReceive = findViewById(R.id.EDT_RECEIVED_MESSAGE);
+    edit_messageTransmit = findViewById(R.id.EDT_SENT_MESSAGE);
+    edit_sendingMessageBuffer = findViewById(R.id.EDT_SEND_MESSAGE);
+    button_send = findViewById(R.id.BTN_SEND);
+    button_pairedDevices = findViewById(R.id.BTN_PAIRED_DEVICES);
 
     button_pairedDevices.setOnClickListener(new View.OnClickListener() {
       /**
