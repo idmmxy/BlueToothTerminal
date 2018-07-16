@@ -8,8 +8,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,11 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,15 +24,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-/**
- * Created by wjg on 2017/6/11.
- */
-
 public class DevicesListActivity extends Activity {
   private BluetoothAdapter bluetoothAdapter;
-  private List<String> mDevicesArray = new ArrayList<String>();
+  private List<String> mDevicesArray = new ArrayList<>();
   private DevicesListAdapter<String> devicesListAdapter;
-  private List<BluetoothDevice> deviceList = new ArrayList<BluetoothDevice>();
+  private List<BluetoothDevice> deviceList = new ArrayList<>();
 
   /**
    * @brief:
@@ -68,7 +59,7 @@ public class DevicesListActivity extends Activity {
     bluetoothAdapter.startDiscovery();
 
     // 为ListView控件设置适配器
-    devicesListAdapter = new DevicesListAdapter<String>(getApplicationContext(), mDevicesArray);
+    devicesListAdapter = new DevicesListAdapter<>(getApplicationContext(), mDevicesArray);
     listView.setAdapter(devicesListAdapter);
   }
 
@@ -164,16 +155,16 @@ public class DevicesListActivity extends Activity {
             socket.connect();
             Log.d("log", "连接成功");
             Toast.makeText(getApplicationContext(), "连接成功", Toast.LENGTH_SHORT).show();
-            BluetoothUtils.setBluetoothSocket(socket);
-
+            MainActivity.setSocket(socket);
             finish();
           } catch (IOException connectException) {
             // Unable to connect; close the socket and get out
             Log.d("log", "连接失败");
             try {
               socket.close();
-            } catch (IOException closeException) { }
-            return;
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
           }
         }
       });
